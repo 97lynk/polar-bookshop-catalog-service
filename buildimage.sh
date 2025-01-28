@@ -1,0 +1,1 @@
+./gradlew bootBuildImage --builder ghcr.io/thomasvitale/java -builder-arm64
