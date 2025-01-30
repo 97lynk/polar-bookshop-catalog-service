@@ -14,8 +14,11 @@ spring:
             request-connect-timeout: 5000
             request-read-timeout: 5000
             uri: http://localhost:8888
+#    sql:
+#        init:
+#            mode: always
 server:
-    port: 9001
+    port: 9002
     tomcat:
         connection-timeout: 2s
         keep-alive-timeout: 15s
