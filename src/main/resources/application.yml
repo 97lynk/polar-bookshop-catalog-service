@@ -25,7 +25,7 @@ spring:
 #        init:
 #            mode: always
 server:
-    port: 9002
+    port: 9001
     tomcat:
         connection-timeout: 2s
         keep-alive-timeout: 15s
