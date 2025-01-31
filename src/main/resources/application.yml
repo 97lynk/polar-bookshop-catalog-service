@@ -5,7 +5,7 @@ spring:
         import: 'optional:configserver:'
     cloud:
         config:
-            fail-fast: true
+            fail-fast: false # In production, set to true
             retry:
                 max-attempts: 5
                 initial-interval: 1000
@@ -14,6 +14,13 @@ spring:
             request-connect-timeout: 5000
             request-read-timeout: 5000
             uri: http://localhost:8888
+    datasource:
+        username: user
+        password: password
+        url: jdbc:postgresql://localhost:5432/polardb_catalog
+        hikari:
+            connection-timeout: 2000 #ms
+            maximum-pool-size: 5
 #    sql:
 #        init:
 #            mode: always
