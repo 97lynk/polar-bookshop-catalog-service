@@ -7,3 +7,9 @@
   -PregistryUrl=ghcr.io \
   -PregistryUsername=<your_github_username> \
   -PregistryToken=<your_github_token>
+
+
+docker image save -o image.tar  catalog-service:latest
+
+minikube image load image.tar --profile polar
+
