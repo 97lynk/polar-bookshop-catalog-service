@@ -29,3 +29,5 @@ spec:
                             value: "50"
                         -   name: SPRING_DATASOURCE_URL
                             value: jdbc:postgresql://polar-postgres/polardb_catalog
+                        -   name: SPRING_CLOUD_CONFIG_URI
+                            value: http://config-service
