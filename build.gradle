@@ -27,6 +27,7 @@ repositories {
 ext {
     set('springCloudVersion', "2023.0.2")
     set('testcontainersVersion', "1.17.3")
+    set('testKeycloakVersion', "2.3.0")
 }
 
 dependencies {
@@ -38,6 +39,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.flywaydb:flyway-database-postgresql'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 
     compileOnly 'org.projectlombok:lombok'
 
@@ -49,6 +51,9 @@ dependencies {
     testImplementation 'org.testcontainers:postgresql'
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'org.testcontainers:junit-jupiter'
+    testImplementation "com.github.dasniko:testcontainers-keycloak:${testKeycloakVersion}"
 
     runtimeOnly 'org.postgresql:postgresql'
 }
