@@ -23,9 +23,9 @@ spring:
         hikari:
             connection-timeout: 2000 #ms
             maximum-pool-size: 5
-#    sql:
-#        init:
-#            mode: always
+    #    sql:
+    #        init:
+    #            mode: always
     security:
         oauth2:
             resourceserver:
@@ -47,4 +47,17 @@ management:
     endpoints:
         web:
             exposure:
-                include: refresh
+                include:
+                    - refresh
+                    - health
+                    - metrics
+                    - prometheus
+    endpoint:
+        health:
+            show-components: always
+            show-details: always
+            probes:
+                enabled: true
+    metrics:
+        tags:
+            application: ${spring.application.name}

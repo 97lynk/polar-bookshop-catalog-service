@@ -43,6 +43,8 @@ public class BookService {
                             book.author(),
                             book.price(),
                             book.publisher(),
+                            existingBook.createdBy(),
+                            existingBook.lastModifiedBy(),
                             existingBook.createdDate(),
                             existingBook.lastModifiedDate(),
                             book.version());
