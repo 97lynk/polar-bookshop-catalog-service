@@ -4,9 +4,10 @@ spring:
     application:
         name: catalog-service
     config:
-        import: 'optional:configserver:'
+        import: ''
     cloud:
         config:
+            enabled: false
             fail-fast: false # In production, set to true
             retry:
                 max-attempts: 5
@@ -61,3 +62,9 @@ management:
     metrics:
         tags:
             application: ${spring.application.name}
+
+logging:
+    pattern:
+        level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+    level:
+        root: trace
