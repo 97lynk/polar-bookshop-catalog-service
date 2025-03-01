@@ -49,16 +49,28 @@ management:
         web:
             exposure:
                 include:
+                    - configprops
                     - refresh
                     - health
                     - metrics
                     - prometheus
+                    - sessions
+                    - flyway
+                    - info
+                    - heapdump
     endpoint:
         health:
             show-components: always
             show-details: always
             probes:
                 enabled: true
+            group:
+                readiness:
+                    include:
+                        - readinessState
+                liveness:
+                    include:
+                        - livenessState
     metrics:
         tags:
             application: ${spring.application.name}
