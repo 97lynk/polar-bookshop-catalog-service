@@ -1,4 +1,4 @@
-./gradlew bootBuildImage --builder ghcr.io/thomasvitale/java -builder-arm64
+./gradlew bootBuildImage --builder ghcr.io/thomasvitale/java-builder-arm64
 
 eval $(minikube -p polar docker-env) &&
 ./gradlew bootBuildImage \
